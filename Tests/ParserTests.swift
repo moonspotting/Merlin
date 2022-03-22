@@ -9,6 +9,6 @@ final class ParserTests: XCTestCase {
     }
     
     func testParse() {
-        parser.parse(url: Bundle.module.url(forResource: "DocumentMetadata", withExtension: "iwa")!)
+        parser.parse(url: Bundle.module.url(forResource: "Document", withExtension: "iwa")!)
     }
 }
