@@ -13,14 +13,18 @@ let package = Package(
             name: "Merlin",
             targets: ["Merlin"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/archivable/package.git", branch: "main")
+    ],
     targets: [
         .target(
             name: "Merlin",
+            dependencies: [
+                .product(name: "Archivable", package: "package")],
             path: "Sources"),
         .testTarget(
             name: "Tests",
             dependencies: ["Merlin"],
-            path: "Tests",
-            resources: [.process("Resources")]),
+            path: "Tests"),
     ]
 )
